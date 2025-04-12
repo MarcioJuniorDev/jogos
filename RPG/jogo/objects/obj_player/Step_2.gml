@@ -1,18 +1,29 @@
-// move
-x += nDir * nSpd;
-nDir = 0;
-
 // dash
-if (bDashKey == true)
+if (nDashDuration > 0)
 {
-	if (bLookingDir == true)
-	{
-		x += nDashDistance;
-	}
-	else
-	{
-		x -= nDashDistance;
-	}
+    var step = sign(nDashDistance) * nLookingDir;
+    var i = 0;
+
+    // tenta mover pixel por pixel
+    while (i < nDashDistance)
+    {
+        if (!place_meeting(x + step, y, obj_ground))
+        {
+            x += step;
+            i++;
+        }
+        else
+        {
+            break;
+        }
+    }
 	
-	bDashKey = false;
+	nDashDuration--;
+}
+
+// move
+if (!bDashKey && nDir != 0 && !bHorHitbox)
+{
+	x += nDir * nSpd;
+	nDir = 0;
 }

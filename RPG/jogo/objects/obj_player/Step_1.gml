@@ -5,13 +5,13 @@ var right_move = scrKeyboardCheck(vk_right) || scrKeyboardCheck((ord("D")));
 if (left_move)
 {
 	nDir = -1;
-	bLookingDir = false;
+	nLookingDir = -1;
 }
 
 if (right_move)
 {
 	nDir = 1;
-	bLookingDir = true;
+	nLookingDir = 1;
 }
 
 if (left_move && right_move)
@@ -20,4 +20,41 @@ if (left_move && right_move)
 }
 
 // dash
-bDashKey = scrKeyboardCheck(ord("Z"));
+bDashKey = scrKeyboardCheckPressed(ord("Z"));
+
+// - input
+if (bDashKey && bCanDash)
+{
+	nDashDuration = 15;
+	bCanDash = false;
+	nDashCooldown = 0;
+}
+
+// - cooldown
+if (!bCanDash)
+{
+	if (nDashCooldown != 60)
+	{
+		nDashCooldown++;
+		obj_DashCooldown.sprite_index = spr_DashCooldown;
+	}
+	else
+	{
+		obj_DashCooldown.sprite_index = spr_DashCooldownIdle;	
+		bCanDash = true;
+	}
+}
+
+// hitbox
+bHorHitbox = scrHorHitbox(obj_ground, nSpd);
+
+if (bHorHitbox)
+{
+	var i = 0;
+	while (i < 5 && scrHorHitbox(obj_ground, 1))
+	{
+		x -= nDir;
+		i++;
+	}
+	bHorHitbox = scrHorHitbox(obj_ground, nSpd);
+}

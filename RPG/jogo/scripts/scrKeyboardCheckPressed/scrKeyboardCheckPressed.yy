@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrKeyboardCheckPressed",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrKeyboardCheckPressed",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
