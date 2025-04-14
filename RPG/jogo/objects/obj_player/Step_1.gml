@@ -36,11 +36,9 @@ if (!bCanDash)
 	if (nDashCooldown != 60)
 	{
 		nDashCooldown++;
-		obj_DashCooldown.sprite_index = spr_DashCooldown;
 	}
 	else
 	{
-		obj_DashCooldown.sprite_index = spr_DashCooldownIdle;	
 		bCanDash = true;
 	}
 }

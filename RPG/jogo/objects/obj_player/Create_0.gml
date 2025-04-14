@@ -9,7 +9,6 @@ bDashKey = false;
 nLookingDir = 1;
 nDashCooldown = 60;
 bCanDash = true;
-instance_create_layer(192, 576, "Instances", obj_DashCooldown);
 
 // hitbox
 bHorHitbox = false;
