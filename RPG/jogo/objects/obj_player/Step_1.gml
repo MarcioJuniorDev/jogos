@@ -21,6 +21,9 @@ if (left_move && right_move)
 
 // dash
 bDashKey = scrKeyboardCheckPressed(ord("Z"));
+obj_dashIcon.x = x-32;
+obj_dashIcon.y = y+32;
+
 
 // - input
 if (bDashKey && bCanDash)
@@ -36,9 +39,11 @@ if (!bCanDash)
 	if (nDashCooldown != 60)
 	{
 		nDashCooldown++;
+		obj_dashIcon.sprite_index = spr_dashCooldown;
 	}
 	else
 	{
+		obj_dashIcon.sprite_index = spr_dashIcon;
 		bCanDash = true;
 	}
 }
