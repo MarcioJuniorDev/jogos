@@ -61,3 +61,33 @@ if (bHorHitbox)
 	}
 	bHorHitbox = scrHorHitbox(obj_ground, nSpd);
 }
+
+// jump
+bJumpKey = scrKeyboardCheckPressed(vk_space);
+
+if (bJumpKey && bCanJump)
+{
+	nJumpDuration = 10;
+}
+
+// attack
+bAttackKey = scrKeyboardCheckPressed(ord("X"));
+
+if (bAttackKey && bCanAttack)
+{
+	nAttackDuration = 30;
+	instance_create_layer(x+16, y, "Instances", obj_attack);
+}
+
+// - cooldown
+if (!bCanAttack)
+{
+	if (nAttackCooldown != 120)
+	{
+		nAttackCooldown++;
+	}
+	else
+	{
+		bCanAttack = true;
+	}
+}

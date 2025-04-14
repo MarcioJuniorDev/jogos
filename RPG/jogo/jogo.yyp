@@ -35,6 +35,7 @@
   },
   "name":"jogo",
   "resources":[
+    {"id":{"name":"obj_attack","path":"objects/obj_attack/obj_attack.yy",},},
     {"id":{"name":"obj_dashIcon","path":"objects/obj_dashIcon/obj_dashIcon.yy",},},
     {"id":{"name":"obj_ground","path":"objects/obj_ground/obj_ground.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
@@ -42,6 +43,8 @@
     {"id":{"name":"scrHorHitbox","path":"scripts/scrHorHitbox/scrHorHitbox.yy",},},
     {"id":{"name":"scrKeyboardCheck","path":"scripts/scrKeyboardCheck/scrKeyboardCheck.yy",},},
     {"id":{"name":"scrKeyboardCheckPressed","path":"scripts/scrKeyboardCheckPressed/scrKeyboardCheckPressed.yy",},},
+    {"id":{"name":"scrVerHitbox","path":"scripts/scrVerHitbox/scrVerHitbox.yy",},},
+    {"id":{"name":"spr_attack","path":"sprites/spr_attack/spr_attack.yy",},},
     {"id":{"name":"spr_dashCooldown","path":"sprites/spr_dashCooldown/spr_dashCooldown.yy",},},
     {"id":{"name":"spr_dashIcon","path":"sprites/spr_dashIcon/spr_dashIcon.yy",},},
     {"id":{"name":"spr_ground","path":"sprites/spr_ground/spr_ground.yy",},},

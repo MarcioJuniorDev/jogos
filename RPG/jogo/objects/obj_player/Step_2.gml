@@ -27,3 +27,36 @@ if (!bDashKey && nDir != 0 && !bHorHitbox)
 	x += nDir * nSpd;
 	nDir = 0;
 }
+
+// jump
+if (nJumpDuration > 0)
+{
+	y -= nJumpDistance;
+	bCanJump = false;
+	nJumpDuration--;
+}
+else
+{
+	if (!scrVerHitbox(nGravity, obj_ground))
+	{
+		y += nGravity;
+	}
+	else
+	{
+		bCanJump = true;
+	}
+}
+
+// attack
+if (nAttackDuration > 0)
+{
+	nAttackDuration--;
+	bCanAttack = false;
+	nAttackCooldown = 0;
+	obj_attack.x = x+16;
+	obj_attack.y = y;
+}
+else
+{
+	instance_destroy(obj_attack);
+}

@@ -13,3 +13,16 @@ instance_create_layer(x-32, y+64, "Instances", obj_dashIcon);
 
 // hitbox
 bHorHitbox = false;
+
+// jump
+nJumpDistance = 14;
+nJumpDuration = 0;
+bJumpKey = false;
+bCanJump = true;
+nGravity = 8;
+
+// attack
+bAttackKey = false;
+nAttackDuration = 0;
+nAttackCooldown = 120;
+bCanAttack = true;
