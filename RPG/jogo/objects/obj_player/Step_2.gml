@@ -53,7 +53,7 @@ if (nAttackDuration > 0)
 	nAttackDuration--;
 	bCanAttack = false;
 	nAttackCooldown = 0;
-	obj_attack.x = x+16;
+	obj_attack.x = x+16*nLookingDir;
 	obj_attack.y = y;
 }
 else
