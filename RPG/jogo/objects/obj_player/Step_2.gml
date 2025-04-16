@@ -37,9 +37,16 @@ if (nJumpDuration > 0)
 }
 else
 {
-	if (!scrVerHitbox(nGravity, obj_ground))
+	if (!scrVerHitbox(1, obj_ground))
 	{
-		y += nGravity;
+		if (!scrVerHitbox(nGravity, obj_ground))
+		{
+			y += nGravity;
+		}
+		else
+		{
+			y += 1;
+		}
 	}
 	else
 	{
