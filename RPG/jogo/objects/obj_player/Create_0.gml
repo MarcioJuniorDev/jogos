@@ -9,7 +9,7 @@ bDashKey = false;
 nLookingDir = 1;
 nDashCooldown = 60;
 bCanDash = true;
-instance_create_layer(x-32, y+64, "Instances", obj_dashIcon);
+instance_create_layer(x-32, y+64, "Icons", obj_dashIcon);
 
 // hitbox
 bHorHitbox = false;
