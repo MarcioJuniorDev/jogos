@@ -36,9 +36,11 @@
   "name":"jogo",
   "resources":[
     {"id":{"name":"obj_attack","path":"objects/obj_attack/obj_attack.yy",},},
+    {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
     {"id":{"name":"obj_dashIcon","path":"objects/obj_dashIcon/obj_dashIcon.yy",},},
     {"id":{"name":"obj_ground","path":"objects/obj_ground/obj_ground.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+    {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"rm_teste","path":"rooms/rm_teste/rm_teste.yy",},},
     {"id":{"name":"scrHorHitbox","path":"scripts/scrHorHitbox/scrHorHitbox.yy",},},
     {"id":{"name":"scrKeyboardCheck","path":"scripts/scrKeyboardCheck/scrKeyboardCheck.yy",},},
@@ -53,6 +55,7 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"roomId":{"name":"rm_teste","path":"rooms/rm_teste/rm_teste.yy",},},
   ],
   "templateType":"game",
