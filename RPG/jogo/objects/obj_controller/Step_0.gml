@@ -1,5 +1,4 @@
-switch(room)
+if (jogar[5] = true && mouse_check_button_pressed(mb_left))
 {
-	case rm_menu:
-		draw_text(90, 864, "Jogar");
+	room_goto(rm_teste);
 }
