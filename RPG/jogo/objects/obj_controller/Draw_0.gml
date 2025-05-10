@@ -1,17 +1,19 @@
 switch(room)
 {
+	// menu
 	case rm_menu:
 		
-		if (mouse_x > jogar[1] && mouse_x < jogar[1]+jogar[3] && mouse_y > jogar[2] && mouse_y < jogar[2]+jogar[4])
+		// menu draw
+		if (mouse_x > play[1] && mouse_x < play[1]+play[3] && mouse_y > play[2] && mouse_y < play[2]+play[4])
 		{
-			jogar[5] = true;
+			play[5] = true;
 			draw_set_colour(c_red);
 		}
 		else
 		{
-			jogar[5] = false;
+			play[5] = false;
 			draw_set_colour(c_white);
 		}
 		
-		draw_text(jogar[1], jogar[2], jogar[0]);
+		draw_text(play[1], play[2], play[0]);
 }
