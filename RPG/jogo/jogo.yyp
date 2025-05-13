@@ -31,7 +31,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.0.190",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"jogo",
   "resources":[
@@ -43,6 +43,7 @@
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"rm_teste","path":"rooms/rm_teste/rm_teste.yy",},},
     {"id":{"name":"scrHorHitbox","path":"scripts/scrHorHitbox/scrHorHitbox.yy",},},
+    {"id":{"name":"scrHover","path":"scripts/scrHover/scrHover.yy",},},
     {"id":{"name":"scrKeyboardCheck","path":"scripts/scrKeyboardCheck/scrKeyboardCheck.yy",},},
     {"id":{"name":"scrKeyboardCheckPressed","path":"scripts/scrKeyboardCheckPressed/scrKeyboardCheckPressed.yy",},},
     {"id":{"name":"scrVerHitbox","path":"scripts/scrVerHitbox/scrVerHitbox.yy",},},
