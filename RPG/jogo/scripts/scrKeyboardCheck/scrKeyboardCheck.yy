@@ -1,13 +1,11 @@
 {
-  "$GMScript":"v1",
-  "%Name":"scrKeyboardCheck",
-  "isCompatibility":false,
-  "isDnD":false,
-  "name":"scrKeyboardCheck",
-  "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "scrKeyboardCheck",
+  "isCompatibility": false,
+  "isDnD": false,
+  "parent": {
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
-  "resourceType":"GMScript",
-  "resourceVersion":"2.0",
 }

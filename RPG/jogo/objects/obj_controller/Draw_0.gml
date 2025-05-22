@@ -4,14 +4,9 @@
 	case rm_menu:
 		
 		// menu draw
-		if (scrHover(play[1], play[2], play[3], play[4], play[5]))
-		{
-			play[6] = draw_set_colour(c_red);
-		}
-		else
-		{
-			play[6] = draw_set_colour(c_white);
-		}
+		play[5] = scrTextColorChange(play[1], play[2], play[3], play[4]);
+		controls[5] = scrTextColorChange(controls[1], controls[2], controls[3], controls[4]);
 		
-		draw_text(play[1], play[2], play[0]);
+		scrDrawTextwColor(play[1], play[2], play[5], play[0]);
+		scrDrawTextwColor(controls[1], controls[2], controls[5], controls[0]);
 }
