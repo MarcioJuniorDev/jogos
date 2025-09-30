@@ -11,7 +11,7 @@ if (keyboard_check_pressed(vk_up))
 	index -= 1;
 }
 
-// limit the index between 0 and 3 in the menu
+// index limitations
 switch(room)
 {
 	case rm_menu:
@@ -25,10 +25,23 @@ switch(room)
 			index = 3;
 		}
 	break;
+	
+	case rm_config:
+		if (index < 4)
+		{
+			index = 4;
+		}
+
+		if (index > 5)
+		{
+			index = 5;
+		}
+	break;
 }
 
 // MENU USE
-if (keyboard_check(vk_enter))
+// navigation
+if (keyboard_check_pressed(vk_enter))
 {
 	switch(index)
 	{
@@ -40,18 +53,24 @@ if (keyboard_check(vk_enter))
 			
 		case 2:
 			room_goto(rm_config);
+			index = 4;
 			break;
 			
 		case 3:
 			game_end();
 			break;
+			
+		case 5:
+			room_goto_previous();
+			index = 2;
+			break;
 	}
 }
 
 // LANGUAGE
-if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_left) && room = rm_config && index = 4)
+if (keyboard_check_pressed(vk_right) && index == 4 || keyboard_check_pressed(vk_left) && index == 4)
 {
-	if (lang = "pt")
+	if (lang == "pt")
 	{
 		lang = "en";
 	}
@@ -75,17 +94,4 @@ switch(lang)
 		{
 			options[i] = english[i];
 		}
-}
-
-// NAVIGATION
-// back
-if (keyboard_check_pressed(vk_escape))
-{
-	switch(room)
-	{
-		case rm_config:
-			room_goto_previous();
-			index = 2;
-		break;
-	}
 }

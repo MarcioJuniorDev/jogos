@@ -39,7 +39,6 @@
     {"id":{"name":"obj_config","path":"objects/obj_config/obj_config.yy",},},
     {"id":{"name":"rm_config","path":"rooms/rm_config/rm_config.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
-    {"id":{"name":"scr_drawColor","path":"scripts/scr_drawColor/scr_drawColor.yy",},},
     {"id":{"name":"scr_resetFont","path":"scripts/scr_resetFont/scr_resetFont.yy",},},
   ],
   "resourceType":"GMProject",

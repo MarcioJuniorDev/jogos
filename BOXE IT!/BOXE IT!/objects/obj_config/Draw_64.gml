@@ -16,16 +16,16 @@ switch(room)
 		for (var i = 0; i < 4; i++)
 		{
 			// hover
-			if (index = i)
+			if (index != i)
 			{
-				hover[i] = c_red;
+				draw_set_color(c_white);
 			}
 			else
 			{
-				hover[i] = c_white;
+				draw_set_color(c_red);
 			}
 
-			scr_drawColor(hover[i], x_center, y_center + 55 * i, options[i]);
+			draw_text(x_center, y_center + 55 * i, options[i]);
 		}
 		// reset text's properties
 		scr_resetFont();
@@ -38,27 +38,28 @@ switch(room)
 		gui_height = display_get_gui_height();
 		x_center = gui_width/2;
 		y_center = gui_height/2;
-		// index 
-		index = 4;
 		// text's properties
 		draw_set_font(ft_menu);
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_middle);
 		// drawning texts
-		for (var i = 4; i < 5; i++)
+		for (var i = 4; i < 6; i++)
 		{
 			// hover
-			if (index = i)
+			if (index != i)
 			{
-				hover[i] = c_red;
+				draw_set_color(c_white);
 			}
 			else
 			{
-				hover[i] = c_white;
+				draw_set_color(c_red);
 			}
 
-			scr_drawColor(hover[i], x_center, y_center + 55 * (i-4), options[i]);
-			scr_drawColor(c_white, x_center + string_width(options[i]) * 2, y_center + 55 * (i-4), lang);
+			draw_text(x_center, y_center + 55 * (i-4), options[i]);
+			if (i == 4)
+			{
+				draw_text(x_center + string_width(options[i]) * 2, y_center + 55 * (i-4), lang);
+			}
 		}
 		scr_resetFont();
 	break;
