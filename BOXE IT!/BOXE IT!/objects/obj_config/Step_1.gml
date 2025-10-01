@@ -1,12 +1,12 @@
 // DRAW TEXT
 // hover system
 // change hover
-if (keyboard_check_pressed(vk_down))
+if (keyboard_check_pressed(keys[2]))
 {
 	index += 1;
 }
 
-if (keyboard_check_pressed(vk_up))
+if (keyboard_check_pressed(keys[0]))
 {
 	index -= 1;
 }
@@ -32,16 +32,16 @@ switch(room)
 			index = 4;
 		}
 
-		if (index > 5)
+		if (index > array_length(options) - 1)
 		{
-			index = 5;
+			index = array_length(options) - 1;
 		}
 	break;
 }
 
 // MENU USE
 // navigation
-if (keyboard_check_pressed(vk_enter))
+if (keyboard_check_pressed(keys[4]))
 {
 	switch(index)
 	{
@@ -61,6 +61,10 @@ if (keyboard_check_pressed(vk_enter))
 			break;
 			
 		case 5:
+			key_change = true;
+			break;
+			
+		case 6:
 			room_goto_previous();
 			index = 2;
 			break;
@@ -68,7 +72,7 @@ if (keyboard_check_pressed(vk_enter))
 }
 
 // LANGUAGE
-if (keyboard_check_pressed(vk_right) && index == 4 || keyboard_check_pressed(vk_left) && index == 4)
+if (keyboard_check_pressed(keys[1]) && index == 4 || keyboard_check_pressed(keys[3]) && index == 4)
 {
 	if (lang == "pt")
 	{

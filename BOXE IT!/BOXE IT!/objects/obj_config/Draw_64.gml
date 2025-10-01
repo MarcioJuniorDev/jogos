@@ -43,7 +43,7 @@ switch(room)
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_middle);
 		// drawning texts
-		for (var i = 4; i < 6; i++)
+		for (var i = 4; i < array_length(options); i++)
 		{
 			// hover
 			if (index != i)
@@ -58,9 +58,40 @@ switch(room)
 			draw_text(x_center, y_center + 55 * (i-4), options[i]);
 			if (i == 4)
 			{
-				draw_text(x_center + string_width(options[i]) * 2, y_center + 55 * (i-4), lang);
+				if (index == 4)
+				{
+					draw_text(x_center + string_width(options[i]) * 2, y_center + 55 * (i-4), "<   " + lang + "   >");
+				}
+				else
+				{
+					draw_text(x_center + string_width(options[i]) * 2, y_center + 55 * (i-4), lang);
+
+				}
+			}
+			
+			if (i == 5)
+			{
+				
+				var txt = scr_keyToString(keys[0]);
+			    var tx = x_center + string_width(options[4]) * 2;
+			    var ty = y_center + 55 * (i-4);
+				
+				draw_text(tx, ty, txt);
+				
+				if (key_change == true && index == 5)
+				{
+					var tw = string_width(txt);
+					var th = string_height(txt);
+					draw_line(tx - 5, ty + th, tx - 12 + tw, ty + th);
+					
+					scr_keyChange(0);
+				}
+				else
+				{
+					key_change = false;
+				}
 			}
 		}
-		scr_resetFont();
+		scr_ResetFont();
 	break;
 }
