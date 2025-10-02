@@ -1,4 +1,4 @@
-function scr_ResetFont()
+function scr_resetFont()
 {
 	draw_set_font(-1);
 	draw_set_halign(-1);

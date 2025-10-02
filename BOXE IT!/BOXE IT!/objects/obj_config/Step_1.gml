@@ -63,8 +63,24 @@ if (keyboard_check_pressed(keys[4]))
 		case 5:
 			key_change = true;
 			break;
-			
+		
 		case 6:
+			key_change = true;
+			break;
+			
+		case 7:
+			key_change = true;
+			break;
+			
+		case 8:
+			key_change = true;
+			break;
+			
+		case 9:
+			key_change = true;
+			break;
+			
+		case 10:
 			room_goto_previous();
 			index = 2;
 			break;
@@ -74,14 +90,42 @@ if (keyboard_check_pressed(keys[4]))
 // LANGUAGE
 if (keyboard_check_pressed(keys[1]) && index == 4 || keyboard_check_pressed(keys[3]) && index == 4)
 {
-	if (lang == "pt")
+	if (keyboard_lastkey == keys[1])
 	{
-		lang = "en";
+		switch(lang)
+		{
+			case "pt":
+				lang = "en";
+			break;
+			case "en":
+				lang = "es";
+			break;
+			case "es":
+				lang = "fr";
+			break;
+			case "fr":
+				lang = "pt";
+			break;
+		}
 	}
 	else
 	{
-		lang = "pt";
-	}	
+		switch(lang)
+		{
+			case "pt":
+				lang = "fr";
+			break;
+			case "en":
+				lang = "pt";
+			break;
+			case "es":
+				lang = "en";
+			break;
+			case "fr":
+				lang = "es";
+			break;
+		}
+	}
 }
 
 // the options' texts become the selected language texts
@@ -98,4 +142,16 @@ switch(lang)
 		{
 			options[i] = english[i];
 		}
+	break;
+	case "es":
+		for (var i = 0; i < array_length(options); i++)
+		{
+			options[i] = spanish[i];
+		}
+	break;case "fr":
+		for (var i = 0; i < array_length(options); i++)
+		{
+			options[i] = french[i];
+		}
+	break;
 }

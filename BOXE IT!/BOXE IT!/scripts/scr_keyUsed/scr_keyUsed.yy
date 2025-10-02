@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_keyChange",
+  "%Name":"scr_keyUsed",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_keyChange",
+  "name":"scr_keyUsed",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
