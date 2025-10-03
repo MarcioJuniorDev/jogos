@@ -61,23 +61,23 @@ if (keyboard_check_pressed(keys[4]))
 			break;
 			
 		case 5:
-			key_change = true;
+			keys_change[0] = true;
 			break;
 		
 		case 6:
-			key_change = true;
+			keys_change[1] = true;
 			break;
 			
 		case 7:
-			key_change = true;
+			keys_change[2] = true;
 			break;
 			
 		case 8:
-			key_change = true;
+			keys_change[3] = true;
 			break;
 			
 		case 9:
-			key_change = true;
+			keys_change[4] = true;
 			break;
 			
 		case 10:

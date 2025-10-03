@@ -73,7 +73,7 @@ switch(room)
 			    var tx = x_center + string_width(options[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
-				if (key_change == true && index == 5)
+				if (keys_change[0] == true && index == 5)
 				{				
 					var txt = "";
 					var tw = string_width(txt);
@@ -86,7 +86,7 @@ switch(room)
 						if (!scr_keyUsed(array_length(keys)))
 						{
 							keys[0] = keyboard_lastkey;
-							key_change = false;
+							keys_change[0] = false;
 						}
 					}
 				}
@@ -94,6 +94,7 @@ switch(room)
 				{		
 					var txt = scr_keyToString(keys[0]);
 					draw_text(tx, ty, txt);
+					keys_change[0] = false;
 				}
 			}
 			
@@ -102,7 +103,7 @@ switch(room)
 			    var tx = x_center + string_width(options[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
-				if (key_change == true && index == 6)
+				if (keys_change[1] == true && index == 6)
 				{				
 					var txt = "";
 					var tw = string_width(txt);
@@ -115,7 +116,7 @@ switch(room)
 						if (!scr_keyUsed(array_length(keys)))
 						{
 							keys[1] = keyboard_lastkey;
-							key_change = false;
+							keys_change[1] = false;
 						}
 					}
 				}
@@ -123,7 +124,7 @@ switch(room)
 				{			
 					var txt = scr_keyToString(keys[1]);
 					draw_text(tx, ty, txt);
-					
+					keys_change[1] = false;
 				}
 			}
 			
@@ -132,7 +133,7 @@ switch(room)
 			    var tx = x_center + string_width(options[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
-				if (key_change == true && index == 7)
+				if (keys_change[2] == true && index == 7)
 				{				
 					var txt = "";
 					var tw = string_width(txt);
@@ -145,7 +146,7 @@ switch(room)
 						if (!scr_keyUsed(array_length(keys)))
 						{
 							keys[2] = keyboard_lastkey;
-							key_change = false;
+							keys_change[2] = false;
 						}
 					}
 				}
@@ -153,6 +154,7 @@ switch(room)
 				{			
 					var txt = scr_keyToString(keys[2]);
 					draw_text(tx, ty, txt);
+					keys_change[2] = false;
 				}
 			}
 			
@@ -161,7 +163,7 @@ switch(room)
 			    var tx = x_center + string_width(options[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
-				if (key_change == true && index == 8)
+				if (keys_change[3] == true && index == 8)
 				{				
 					var txt = "";
 					var tw = string_width(txt);
@@ -174,7 +176,7 @@ switch(room)
 						if (!scr_keyUsed(array_length(keys)))
 						{
 							keys[3] = keyboard_lastkey;
-							key_change = false;
+							keys_change[3] = false;
 						}
 					}
 				}
@@ -182,6 +184,7 @@ switch(room)
 				{			
 					var txt = scr_keyToString(keys[3]);
 					draw_text(tx, ty, txt);
+					keys_change[3] = false;
 				}
 			}
 			
@@ -190,7 +193,7 @@ switch(room)
 			    var tx = x_center + string_width(options[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
-				if (key_change == true && index == 9)
+				if (keys_change[4] == true && index == 9)
 				{				
 					var txt = "";
 					var tw = string_width(txt);
@@ -203,7 +206,7 @@ switch(room)
 						if (!scr_keyUsed(array_length(keys)))
 						{
 							keys[4] = keyboard_lastkey;
-							key_change = false;
+							keys_change[4] = false;
 						}
 					}
 				}
@@ -211,6 +214,7 @@ switch(room)
 				{			
 					var txt = scr_keyToString(keys[4]);
 					draw_text(tx, ty, txt);
+					keys_change[4] = false;
 				}
 			}
 		}

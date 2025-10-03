@@ -12,4 +12,4 @@ french = ["nouveau jeu", "charger", "paramètres", "sortir", "langue", "monter",
 
 // controls
 keys = [vk_up, vk_right, vk_down, vk_left, vk_enter];
-key_change = false;
+keys_change = [false, false, false, false, false];
