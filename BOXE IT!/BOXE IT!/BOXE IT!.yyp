@@ -37,17 +37,23 @@
   "resources":[
     {"id":{"name":"ft_menu","path":"fonts/ft_menu/ft_menu.yy",},},
     {"id":{"name":"obj_config","path":"objects/obj_config/obj_config.yy",},},
+    {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"rm_config","path":"rooms/rm_config/rm_config.yy",},},
+    {"id":{"name":"rm_criacao","path":"rooms/rm_criacao/rm_criacao.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
+    {"id":{"name":"scr_HorizontalValueChange","path":"scripts/scr_HorizontalValueChange/scr_HorizontalValueChange.yy",},},
+    {"id":{"name":"scr_indexLimit","path":"scripts/scr_indexLimit/scr_indexLimit.yy",},},
     {"id":{"name":"scr_keyToString","path":"scripts/scr_keyToString/scr_keyToString.yy",},},
     {"id":{"name":"scr_keyUsed","path":"scripts/scr_keyUsed/scr_keyUsed.yy",},},
     {"id":{"name":"scr_resetFont","path":"scripts/scr_resetFont/scr_resetFont.yy",},},
+    {"id":{"name":"scr_rightaddleftsub","path":"scripts/scr_rightaddleftsub/scr_rightaddleftsub.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"roomId":{"name":"rm_config","path":"rooms/rm_config/rm_config.yy",},},
+    {"roomId":{"name":"rm_criacao","path":"rooms/rm_criacao/rm_criacao.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

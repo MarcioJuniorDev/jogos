@@ -3,7 +3,7 @@ function scr_keyUsed(size)
 	var nReturn = 0;
 	for(i = 0; i < size; i++)
 	{
-		if (keyboard_lastkey == keys[i])
+		if (keyboard_lastkey == global.keys[i])
 		{
 			nReturn += 1;
 		}

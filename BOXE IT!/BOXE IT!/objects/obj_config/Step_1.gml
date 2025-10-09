@@ -1,51 +1,41 @@
 // DRAW TEXT
 // hover system
 // change hover
-if (keyboard_check_pressed(keys[2]))
+if (keyboard_check_pressed(global.keys[2]))
 {
-	index += 1;
+	global.index += 1;
 }
 
-if (keyboard_check_pressed(keys[0]))
+if (keyboard_check_pressed(global.keys[0]))
 {
-	index -= 1;
+	global.index -= 1;
 }
 
-// index limitations
+// global.index limitations
 switch(room)
 {
 	case rm_menu:
-		if (index < 0)
-		{
-			index = 0;
-		}
-
-		if (index > 3)
-		{
-			index = 3;
-		}
+		scr_indexLimit(0, 3);
 	break;
 	
 	case rm_config:
-		if (index < 4)
-		{
-			index = 4;
-		}
-
-		if (index > array_length(options) - 1)
-		{
-			index = array_length(options) - 1;
-		}
+		scr_indexLimit(4, 10);
+	break;
+	
+	case rm_criacao:
+		scr_indexLimit(12, 15);
 	break;
 }
 
 // MENU USE
 // navigation
-if (keyboard_check_pressed(keys[4]))
+if (keyboard_check_pressed(global.keys[4]))
 {
-	switch(index)
+	switch(global.index)
 	{
 		case 0:
+			room_goto(rm_criacao);
+			global.index = 12;
 			break;
 			
 		case 1:
@@ -53,7 +43,7 @@ if (keyboard_check_pressed(keys[4]))
 			
 		case 2:
 			room_goto(rm_config);
-			index = 4;
+			global.index = 4;
 			break;
 			
 		case 3:
@@ -82,15 +72,15 @@ if (keyboard_check_pressed(keys[4]))
 			
 		case 10:
 			room_goto_previous();
-			index = 2;
+			global.index = 2;
 			break;
 	}
 }
 
 // LANGUAGE
-if (keyboard_check_pressed(keys[1]) && index == 4 || keyboard_check_pressed(keys[3]) && index == 4)
+if (keyboard_check_pressed(global.keys[1]) && global.index == 4 || keyboard_check_pressed(global.keys[3]) && global.index == 4)
 {
-	if (keyboard_lastkey == keys[1])
+	if (keyboard_lastkey == global.keys[1])
 	{
 		switch(lang)
 		{
@@ -128,30 +118,30 @@ if (keyboard_check_pressed(keys[1]) && index == 4 || keyboard_check_pressed(keys
 	}
 }
 
-// the options' texts become the selected language texts
+// the global.options' texts become the selected language texts
 switch(lang)
 {
 	case "pt":
-		for (var i = 0; i < array_length(options); i++)
+		for (var i = 0; i < array_length(global.options); i++)
 		{
-			options[i] = portuguese[i];
+			global.options[i] = portuguese[i];
 		}
 		break;
 	case "en":
-		for (var i = 0; i < array_length(options); i++)
+		for (var i = 0; i < array_length(global.options); i++)
 		{
-			options[i] = english[i];
+			global.options[i] = english[i];
 		}
 	break;
 	case "es":
-		for (var i = 0; i < array_length(options); i++)
+		for (var i = 0; i < array_length(global.options); i++)
 		{
-			options[i] = spanish[i];
+			global.options[i] = spanish[i];
 		}
 	break;case "fr":
-		for (var i = 0; i < array_length(options); i++)
+		for (var i = 0; i < array_length(global.options); i++)
 		{
-			options[i] = french[i];
+			global.options[i] = french[i];
 		}
 	break;
 }

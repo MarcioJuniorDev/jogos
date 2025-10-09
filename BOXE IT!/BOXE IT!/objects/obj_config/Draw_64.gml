@@ -16,7 +16,7 @@ switch(room)
 		for (var i = 0; i < 4; i++)
 		{
 			// hover
-			if (index != i)
+			if (global.index != i)
 			{
 				draw_set_color(c_white);
 			}
@@ -24,8 +24,9 @@ switch(room)
 			{
 				draw_set_color(c_red);
 			}
-
-			draw_text(x_center, y_center + 55 * i, options[i]);
+			
+			// draw text
+			draw_text(x_center, y_center + 55 * i, global.options[i]);
 		}
 		// reset text's properties
 		scr_resetFont();
@@ -43,10 +44,10 @@ switch(room)
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_middle);
 		// drawning texts
-		for (var i = 4; i < array_length(options); i++)
+		for (var i = 4; i < 11; i++)
 		{
 			// hover
-			if (index != i)
+			if (global.index != i)
 			{
 				draw_set_color(c_white);
 			}
@@ -54,26 +55,22 @@ switch(room)
 			{
 				draw_set_color(c_red);
 			}
-
-			draw_text(x_center, y_center + 55 * (i-4), options[i]);
+			// draw text
+			draw_text(x_center, y_center + 55 * (i-4), global.options[i]);
+			
+			// draw the language acronym
 			if (i == 4)
 			{
-				if (index == 4)
-				{
-					draw_text(x_center + string_width(options[i]) * 2, y_center + 55 * (i-4), "<   " + lang + "   >");
-				}
-				else
-				{
-					draw_text(x_center + string_width(options[i]) * 2, y_center + 55 * (i-4), lang);
-				}
+				scr_HorizontalValueChange(4, x_center, string_width(global.options[4]) * 2, y_center, 0, lang);
 			}
 			
+			// draw key used for go up
 			if (i == 5)
 			{
-			    var tx = x_center + string_width(options[4]) * 2;
+			    var tx = x_center + string_width(global.options[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
-				if (keys_change[0] == true && index == 5)
+				if (keys_change[0] == true && global.index == 5)
 				{				
 					var txt = "";
 					var tw = string_width(txt);
@@ -83,27 +80,28 @@ switch(room)
 					
 					if (keyboard_check_pressed(vk_anykey))
 					{
-						if (!scr_keyUsed(array_length(keys)))
+						if (!scr_keyUsed(array_length(global.keys)))
 						{
-							keys[0] = keyboard_lastkey;
+							global.keys[0] = keyboard_lastkey;
 							keys_change[0] = false;
 						}
 					}
 				}
 				else
 				{		
-					var txt = scr_keyToString(keys[0]);
+					var txt = scr_keyToString(global.keys[0]);
 					draw_text(tx, ty, txt);
 					keys_change[0] = false;
 				}
 			}
 			
+			// draw key used for go right
 			if (i == 6)
 			{
-			    var tx = x_center + string_width(options[4]) * 2;
+			    var tx = x_center + string_width(global.options[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
-				if (keys_change[1] == true && index == 6)
+				if (keys_change[1] == true && global.index == 6)
 				{				
 					var txt = "";
 					var tw = string_width(txt);
@@ -113,27 +111,28 @@ switch(room)
 					
 					if (keyboard_check_pressed(vk_anykey))
 					{
-						if (!scr_keyUsed(array_length(keys)))
+						if (!scr_keyUsed(array_length(global.keys)))
 						{
-							keys[1] = keyboard_lastkey;
+							global.keys[1] = keyboard_lastkey;
 							keys_change[1] = false;
 						}
 					}
 				}
 				else
 				{			
-					var txt = scr_keyToString(keys[1]);
+					var txt = scr_keyToString(global.keys[1]);
 					draw_text(tx, ty, txt);
 					keys_change[1] = false;
 				}
 			}
 			
+			// draw key used for go down
 			if (i == 7)
 			{
-			    var tx = x_center + string_width(options[4]) * 2;
+			    var tx = x_center + string_width(global.options[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
-				if (keys_change[2] == true && index == 7)
+				if (keys_change[2] == true && global.index == 7)
 				{				
 					var txt = "";
 					var tw = string_width(txt);
@@ -143,27 +142,28 @@ switch(room)
 					
 					if (keyboard_check_pressed(vk_anykey))
 					{
-						if (!scr_keyUsed(array_length(keys)))
+						if (!scr_keyUsed(array_length(global.keys)))
 						{
-							keys[2] = keyboard_lastkey;
+							global.keys[2] = keyboard_lastkey;
 							keys_change[2] = false;
 						}
 					}
 				}
 				else
 				{			
-					var txt = scr_keyToString(keys[2]);
+					var txt = scr_keyToString(global.keys[2]);
 					draw_text(tx, ty, txt);
 					keys_change[2] = false;
 				}
 			}
 			
+			// draw key used for go left
 			if (i == 8)
 			{
-			    var tx = x_center + string_width(options[4]) * 2;
+			    var tx = x_center + string_width(global.options[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
-				if (keys_change[3] == true && index == 8)
+				if (keys_change[3] == true && global.index == 8)
 				{				
 					var txt = "";
 					var tw = string_width(txt);
@@ -173,27 +173,28 @@ switch(room)
 					
 					if (keyboard_check_pressed(vk_anykey))
 					{
-						if (!scr_keyUsed(array_length(keys)))
+						if (!scr_keyUsed(array_length(global.keys)))
 						{
-							keys[3] = keyboard_lastkey;
+							global.keys[3] = keyboard_lastkey;
 							keys_change[3] = false;
 						}
 					}
 				}
 				else
 				{			
-					var txt = scr_keyToString(keys[3]);
+					var txt = scr_keyToString(global.keys[3]);
 					draw_text(tx, ty, txt);
 					keys_change[3] = false;
 				}
 			}
 			
+			// draw key used to select
 			if (i == 9)
 			{
-			    var tx = x_center + string_width(options[4]) * 2;
+			    var tx = x_center + string_width(global.options[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
-				if (keys_change[4] == true && index == 9)
+				if (keys_change[4] == true && global.index == 9)
 				{				
 					var txt = "";
 					var tw = string_width(txt);
@@ -203,16 +204,16 @@ switch(room)
 					
 					if (keyboard_check_pressed(vk_anykey))
 					{
-						if (!scr_keyUsed(array_length(keys)))
+						if (!scr_keyUsed(array_length(global.keys)))
 						{
-							keys[4] = keyboard_lastkey;
+							global.keys[4] = keyboard_lastkey;
 							keys_change[4] = false;
 						}
 					}
 				}
 				else
 				{			
-					var txt = scr_keyToString(keys[4]);
+					var txt = scr_keyToString(global.keys[4]);
 					draw_text(tx, ty, txt);
 					keys_change[4] = false;
 				}
