@@ -23,7 +23,7 @@ switch(room)
 	break;
 	
 	case rm_criacao:
-		scr_indexLimit(12, 15);
+		scr_indexLimit(12, 17);
 	break;
 }
 
@@ -73,7 +73,16 @@ if (keyboard_check_pressed(global.keys[4]))
 		case 10:
 			room_goto_previous();
 			global.index = 2;
-			break;
+		break;
+		
+		case 16:
+			room_goto(rm_menu);
+			global.index = 0;
+		break;
+		
+		case 17:
+			global.created = true;
+		break;
 	}
 }
 

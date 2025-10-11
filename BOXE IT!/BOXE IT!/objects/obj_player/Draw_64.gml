@@ -15,66 +15,69 @@ switch(room)
 		
 		
 		// draw texts
-		for(var i = 11; i < array_length(global.options); i++)
+		if (global.created == false)
 		{
-			// hover
-			if (global.index != i)
+			for(var i = 11; i < array_length(global.options); i++)
 			{
-				draw_set_color(c_white);
-			}
-			else
-			{
-				draw_set_color(c_red);
-			}
+				// hover
+				if (global.index != i)
+				{
+					draw_set_color(c_white);
+				}
+				else
+				{
+					draw_set_color(c_red);
+				}
 			
-			if (i == 11)
-			{
-				y_center -= 150;
-			}
-			else
-			{
-				y_center = gui_height/2;
-			}
+				if (i == 11)
+				{
+					y_center -= 150;
+				}
+				else
+				{
+					y_center = gui_height/2;
+				}
 			
-			switch(i)
-			{
-				case 12:
-					scr_HorizontalValueChange(12, x_center, 150, y_center, i-11, string(att[i-12]));
-				break;
+				switch(i)
+				{
+					case 12:
+						scr_HorizontalValueChange(12, x_center, 150, y_center, i-11, string(att[i-12]));
+					break;
 				
-				case 13:
-					scr_HorizontalValueChange(13, x_center, 150, y_center, i-11, string(att[i-12]));
-				break;
+					case 13:
+						scr_HorizontalValueChange(13, x_center, 150, y_center, i-11, string(att[i-12]));
+					break;
 				
-				case 14:
-					scr_HorizontalValueChange(14, x_center, 150, y_center, i-11, string(att[i-12]));
-				break;
+					case 14:
+						scr_HorizontalValueChange(14, x_center, 150, y_center, i-11, string(att[i-12]));
+					break;
 				
-				case 15:
-					scr_HorizontalValueChange(15, x_center, 150, y_center, i-11, string(att[i-12]));
-				break;
-			}
+					case 15:
+						scr_HorizontalValueChange(15, x_center, 150, y_center, i-11, string(att[i-12]));
+					break;
+				}
 			
-			draw_text(x_center, y_center + 55 * (i-11), global.options[i]);
-		}
+				draw_text(x_center, y_center + 55 * (i-11), global.options[i]);
+			}
 		
-		switch(global.index)
-			{
-				case 12:
-					scr_rightaddleftsub(global.keys[1], global.keys[3], 0);
-				break;
+			switch(global.index)
+				{
+					case 12:
+						scr_rightaddleftsub(global.keys[1], global.keys[3], 0);
+					break;
 				
-				case 13:
-					scr_rightaddleftsub(global.keys[1], global.keys[3], 1);
-				break;
+					case 13:
+						scr_rightaddleftsub(global.keys[1], global.keys[3], 1);
+					break;
 				
-				case 14:
-					scr_rightaddleftsub(global.keys[1], global.keys[3], 2);
-				break;
+					case 14:
+						scr_rightaddleftsub(global.keys[1], global.keys[3], 2);
+					break;
 				
-				case 15:
-					scr_rightaddleftsub(global.keys[1], global.keys[3], 3);
-				break;
-			}
-	break;
+					case 15:
+						scr_rightaddleftsub(global.keys[1], global.keys[3], 3);
+					break;
+				}
+		break;
+	}
 }

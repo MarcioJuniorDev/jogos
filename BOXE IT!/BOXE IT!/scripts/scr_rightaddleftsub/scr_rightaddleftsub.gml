@@ -2,7 +2,11 @@ function scr_rightaddleftsub(right, left, i)
 {
 	if (keyboard_check_pressed(right))
 	{
-		att[i] += 1;
+		if (global.attTotal > 0)
+		{
+			att[i] += 1;
+			global.attTotal -= 1;
+		}
 	}
 	else
 	{
@@ -11,6 +15,7 @@ function scr_rightaddleftsub(right, left, i)
 			if (att[i] > 0)
 			{
 				att[i] -= 1;
+				global.attTotal += 1;
 			}
 		}
 	}
