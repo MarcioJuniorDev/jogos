@@ -81,7 +81,14 @@ if (keyboard_check_pressed(global.keys[4]))
 		break;
 		
 		case 17:
-			global.created = true;
+			if (global.attTotal == 0)
+			{
+				global.created = true;
+			}
+			else
+			{
+				global.textWrite[0] = true;
+			}
 		break;
 	}
 }

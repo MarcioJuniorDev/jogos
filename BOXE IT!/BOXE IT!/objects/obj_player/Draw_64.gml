@@ -6,7 +6,7 @@ switch(room)
 		var gui_width = display_get_gui_width();
 		var gui_height = display_get_gui_height();
 		var x_center = gui_width/2;
-		var y_center = gui_height/2;
+		var y_center = gui_height/3;
 
 		// text's properties
 		draw_set_font(ft_menu);
@@ -35,7 +35,7 @@ switch(room)
 				}
 				else
 				{
-					y_center = gui_height/2;
+					y_center = gui_height/3;
 				}
 			
 				switch(i)
@@ -61,23 +61,23 @@ switch(room)
 			}
 		
 			switch(global.index)
-				{
-					case 12:
-						scr_rightaddleftsub(global.keys[1], global.keys[3], 0);
-					break;
+			{
+				case 12:
+					scr_rightaddleftsub(global.keys[1], global.keys[3], 0);
+				break;
+			
+				case 13:
+					scr_rightaddleftsub(global.keys[1], global.keys[3], 1);
+				break;
 				
-					case 13:
-						scr_rightaddleftsub(global.keys[1], global.keys[3], 1);
-					break;
+				case 14:
+					scr_rightaddleftsub(global.keys[1], global.keys[3], 2);
+				break;
 				
-					case 14:
-						scr_rightaddleftsub(global.keys[1], global.keys[3], 2);
-					break;
-				
-					case 15:
-						scr_rightaddleftsub(global.keys[1], global.keys[3], 3);
-					break;
-				}
+				case 15:
+					scr_rightaddleftsub(global.keys[1], global.keys[3], 3);
+				break;
+			}
+			}
 		break;
-	}
 }
