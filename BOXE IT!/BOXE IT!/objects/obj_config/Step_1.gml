@@ -83,11 +83,11 @@ if (keyboard_check_pressed(global.keys[4]))
 		case 17:
 			if (global.attTotal == 0)
 			{
-				global.created = true;
+				created = true;
 			}
 			else
 			{
-				global.textWrite[0] = true;
+				warning = true;
 			}
 		break;
 	}
@@ -134,30 +134,30 @@ if (keyboard_check_pressed(global.keys[1]) && global.index == 4 || keyboard_chec
 	}
 }
 
-// the global.options' texts become the selected language texts
+// the global.texts' texts become the selected language texts
 switch(lang)
 {
 	case "pt":
-		for (var i = 0; i < array_length(global.options); i++)
+		for (var i = 0; i < array_length(global.texts); i++)
 		{
-			global.options[i] = portuguese[i];
+			global.texts[i] = portuguese[i];
 		}
 		break;
 	case "en":
-		for (var i = 0; i < array_length(global.options); i++)
+		for (var i = 0; i < array_length(global.texts); i++)
 		{
-			global.options[i] = english[i];
+			global.texts[i] = english[i];
 		}
 	break;
 	case "es":
-		for (var i = 0; i < array_length(global.options); i++)
+		for (var i = 0; i < array_length(global.texts); i++)
 		{
-			global.options[i] = spanish[i];
+			global.texts[i] = spanish[i];
 		}
 	break;case "fr":
-		for (var i = 0; i < array_length(global.options); i++)
+		for (var i = 0; i < array_length(global.texts); i++)
 		{
-			global.options[i] = french[i];
+			global.texts[i] = french[i];
 		}
 	break;
 }

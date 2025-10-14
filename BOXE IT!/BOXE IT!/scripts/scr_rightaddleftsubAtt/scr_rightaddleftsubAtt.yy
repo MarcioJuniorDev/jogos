@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_rightaddleftsub",
+  "%Name":"scr_rightaddleftsubAtt",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_rightaddleftsub",
+  "name":"scr_rightaddleftsubAtt",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

@@ -46,7 +46,7 @@
     {"id":{"name":"scr_keyToString","path":"scripts/scr_keyToString/scr_keyToString.yy",},},
     {"id":{"name":"scr_keyUsed","path":"scripts/scr_keyUsed/scr_keyUsed.yy",},},
     {"id":{"name":"scr_resetFont","path":"scripts/scr_resetFont/scr_resetFont.yy",},},
-    {"id":{"name":"scr_rightaddleftsub","path":"scripts/scr_rightaddleftsub/scr_rightaddleftsub.yy",},},
+    {"id":{"name":"scr_rightaddleftsubAtt","path":"scripts/scr_rightaddleftsubAtt/scr_rightaddleftsubAtt.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
