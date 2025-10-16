@@ -301,4 +301,18 @@ switch(room)
 				break;
 			}
 		}
+
+		if(warning)
+		{
+			if(warning_timer < 61)
+			{
+				draw_text(650, 650, global.texts[18]);
+				warning_timer++;
+			}
+			else
+			{
+				warning = false;
+				warning_timer = 0;
+			}
+		}
 }

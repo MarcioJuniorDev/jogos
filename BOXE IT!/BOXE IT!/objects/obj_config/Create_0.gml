@@ -1,7 +1,7 @@
 // MENU DRAW
 global.texts = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
 warning = false;
-timer_exist = false;
+warning_timer = 0;
 // menu text hover system
 global.index = 0;
 
