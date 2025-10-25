@@ -26,7 +26,7 @@ switch(room)
 			}
 			
 			// draw text
-			draw_text(x_center, y_center + 55 * i, global.texts[i]);
+			draw_text(x_center, y_center + 55 * i, texts[i]);
 		}
 		// reset text's properties
 		scr_resetFont();
@@ -56,18 +56,18 @@ switch(room)
 				draw_set_color(c_red);
 			}
 			// draw text
-			draw_text(x_center, y_center + 55 * (i-4), global.texts[i]);
+			draw_text(x_center, y_center + 55 * (i-4), texts[i]);
 			
 			// draw the language acronym
 			if (i == 4)
 			{
-				scr_HorizontalValueChange(4, x_center, string_width(global.texts[4]) * 2, y_center, 0, lang);
+				scr_HorizontalValueChange(4, x_center, string_width(texts[4]) * 2, y_center, 0, lang);
 			}
 			
 			// draw key used for go up
 			if (i == 5)
 			{
-			    var tx = x_center + string_width(global.texts[4]) * 2;
+			    var tx = x_center + string_width(texts[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
 				if (keys_change[0] == true && global.index == 5)
@@ -98,7 +98,7 @@ switch(room)
 			// draw key used for go right
 			if (i == 6)
 			{
-			    var tx = x_center + string_width(global.texts[4]) * 2;
+			    var tx = x_center + string_width(texts[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
 				if (keys_change[1] == true && global.index == 6)
@@ -129,7 +129,7 @@ switch(room)
 			// draw key used for go down
 			if (i == 7)
 			{
-			    var tx = x_center + string_width(global.texts[4]) * 2;
+			    var tx = x_center + string_width(texts[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
 				if (keys_change[2] == true && global.index == 7)
@@ -160,7 +160,7 @@ switch(room)
 			// draw key used for go left
 			if (i == 8)
 			{
-			    var tx = x_center + string_width(global.texts[4]) * 2;
+			    var tx = x_center + string_width(texts[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
 				if (keys_change[3] == true && global.index == 8)
@@ -191,7 +191,7 @@ switch(room)
 			// draw key used to select
 			if (i == 9)
 			{
-			    var tx = x_center + string_width(global.texts[4]) * 2;
+			    var tx = x_center + string_width(texts[4]) * 2;
 			    var ty = y_center + 55 * (i-4);
 				
 				if (keys_change[4] == true && global.index == 9)
@@ -222,7 +222,7 @@ switch(room)
 		scr_resetFont()
 	break;
 	
-	case rm_criacao:
+	case rm_char_attributes:
 		// MENU DRAW
 		// centering texts
 		var gui_width = display_get_gui_width();
@@ -237,8 +237,6 @@ switch(room)
 		
 		
 		// draw texts
-		if (created == false)
-		{
 			for(var i = 11; i < 18; i++)
 			{
 				// hover
@@ -279,7 +277,7 @@ switch(room)
 					break;
 				}
 			
-				draw_text(x_center, y_center + 55 * (i-11), global.texts[i]);
+				draw_text(x_center, y_center + 55 * (i-11), texts[i]);
 			}
 		
 			switch(global.index)
@@ -300,13 +298,12 @@ switch(room)
 					scr_rightaddleftsubAtt(global.keys[1], global.keys[3], 3);
 				break;
 			}
-		}
 
 		if(warning)
 		{
 			if(warning_timer < 61)
 			{
-				draw_text(650, 650, global.texts[18]);
+				draw_text(650, 650, texts[18]);
 				warning_timer++;
 			}
 			else
@@ -315,4 +312,47 @@ switch(room)
 				warning_timer = 0;
 			}
 		}
+	break;
+	
+	case rm_char_appearance:
+		var gui_width = display_get_gui_width();
+		var gui_height = display_get_gui_height();
+		var x_center = gui_width/2;
+		var y_center = gui_height/3;
+
+		// text's properties
+		draw_set_font(ft_menu);
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_middle);
+		
+		hair_color[0] = texts[20];
+		hair_color[1] = texts[21];
+		hair_color[2] = texts[22];
+		hair_color[3] = texts[23];
+		
+		if (appearance[0] == "")
+		{
+			appearance[0] = hair_color[0];
+		}
+		
+		for(var i = 19; i < array_length(texts); i++)
+		{
+			// hover
+			if (global.index != i)
+			{
+				draw_set_color(c_white);
+			}
+			else
+			{
+				draw_set_color(c_red);
+			}
+			
+			if(i == 19)
+			{
+				draw_text(x_center, y_center + 55 * (i-19), texts[i]);
+				scr_HorizontalValueChange(19, x_center, string_width(texts[19]) * 2, y_center, 0, appearance[0]);
+			}
+
+		}
+	break;
 }

@@ -22,9 +22,13 @@ switch(room)
 		scr_indexLimit(4, 10);
 	break;
 	
-	case rm_criacao:
+	case rm_char_attributes:
 		scr_indexLimit(12, 17);
 	break;
+	
+	case rm_char_appearance:
+	scr_indexLimit(19, array_length(texts));
+break;
 }
 
 // MENU USE
@@ -34,7 +38,7 @@ if (keyboard_check_pressed(global.keys[4]))
 	switch(global.index)
 	{
 		case 0:
-			room_goto(rm_criacao);
+			room_goto(rm_char_attributes);
 			global.index = 12;
 			break;
 			
@@ -83,7 +87,8 @@ if (keyboard_check_pressed(global.keys[4]))
 		case 17:
 			if (global.attTotal == 0)
 			{
-				created = true;
+				room_goto(rm_char_appearance);
+				global.index = 19;
 			}
 			else
 			{
@@ -134,30 +139,72 @@ if (keyboard_check_pressed(global.keys[1]) && global.index == 4 || keyboard_chec
 	}
 }
 
-// the global.texts' texts become the selected language texts
+// the texts' texts become the selected language texts
 switch(lang)
 {
 	case "pt":
-		for (var i = 0; i < array_length(global.texts); i++)
+		for (var i = 0; i < array_length(texts); i++)
 		{
-			global.texts[i] = portuguese[i];
+			texts[i] = portuguese[i];
 		}
 		break;
 	case "en":
-		for (var i = 0; i < array_length(global.texts); i++)
+		for (var i = 0; i < array_length(texts); i++)
 		{
-			global.texts[i] = english[i];
+			texts[i] = english[i];
 		}
 	break;
 	case "es":
-		for (var i = 0; i < array_length(global.texts); i++)
+		for (var i = 0; i < array_length(texts); i++)
 		{
-			global.texts[i] = spanish[i];
+			texts[i] = spanish[i];
 		}
 	break;case "fr":
-		for (var i = 0; i < array_length(global.texts); i++)
+		for (var i = 0; i < array_length(texts); i++)
 		{
-			global.texts[i] = french[i];
+			texts[i] = french[i];
 		}
 	break;
+}
+
+//	CHARACTER CREATION
+// hair_color
+if (keyboard_check_pressed(global.keys[1]) && global.index == 19 || keyboard_check_pressed(global.keys[3]) && global.index == 19)
+{
+	if (keyboard_lastkey == global.keys[1])
+	{
+		switch(appearance[0])
+		{
+			case hair_color[0]:
+				appearance[0] = hair_color[1];
+			break;
+			case hair_color[1]:
+				appearance[0] = hair_color[2];
+			break;
+			case hair_color[2]:
+				appearance[0] = hair_color[3];
+			break;
+			case hair_color[3]:
+				appearance[0] = hair_color[0];
+			break;
+		}
+	}
+	else
+	{
+		switch(appearance[0])
+		{
+			case hair_color[0]:
+				appearance[0] = hair_color[3];
+			break;
+			case hair_color[1]:
+				appearance[0] = hair_color[0];
+			break;
+			case hair_color[2]:
+				appearance[0] = hair_color[1];
+			break;
+			case hair_color[3]:
+				appearance[0] = hair_color[2];
+			break;
+		}
+	}
 }
