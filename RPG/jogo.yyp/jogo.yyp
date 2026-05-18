@@ -35,6 +35,7 @@
   },
   "name":"jogo",
   "resources":[
+    {"id":{"name":"Font1","path":"fonts/Font1/Font1.yy",},},
     {"id":{"name":"obj_attack","path":"objects/obj_attack/obj_attack.yy",},},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
     {"id":{"name":"obj_dashIcon","path":"objects/obj_dashIcon/obj_dashIcon.yy",},},

@@ -9,6 +9,11 @@ if (scrHover(settings[1], settings[2], settings[3], settings[4]) && mouse_check_
 	room_goto(rm_config);
 }
 
+if (scrHover(leave[1], leave[2], leave[3], leave[4]) && mouse_check_button_pressed(mb_left))
+{
+	game_end();
+}
+
 // back to menu
 if (scrKeyboardCheckPressed(vk_escape))
 {
