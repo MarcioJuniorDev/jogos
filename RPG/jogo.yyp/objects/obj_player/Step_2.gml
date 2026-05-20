@@ -22,7 +22,7 @@ if (nDashDuration > 0)
 }
 
 // move
-if (!bDashKey && nDir != 0 && !bHorHitbox)
+if (!bDashKeyPressed && nDir != 0 && !bHorHitbox)
 {
 	x += nDir * nSpd;
 	nDir = 0;

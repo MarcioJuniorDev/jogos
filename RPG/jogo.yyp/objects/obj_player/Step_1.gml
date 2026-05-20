@@ -1,6 +1,6 @@
 // move
-var left_move = scrKeyboardCheck(vk_left) || scrKeyboardCheck((ord("A")));
-var right_move = scrKeyboardCheck(vk_right) || scrKeyboardCheck((ord("D")));
+var left_move = scrKeyboardCheck(global.left_key);
+var right_move = scrKeyboardCheck(global.right_key);
 
 if (left_move)
 {
@@ -20,13 +20,13 @@ if (left_move && right_move)
 }
 
 // dash
-bDashKey = scrKeyboardCheckPressed(ord("Z"));
+bDashKeyPressed = scrKeyboardCheckPressed(global.dash_key);
 obj_dashIcon.x = x-32;
 obj_dashIcon.y = y+32;
 
 
 // - input
-if (bDashKey && bCanDash)
+if (bDashKeyPressed && bCanDash)
 {
 	nDashDuration = 15;
 	bCanDash = false;
@@ -63,17 +63,17 @@ if (bHorHitbox)
 }
 
 // jump
-bJumpKey = scrKeyboardCheckPressed(vk_space);
+bJumpKeyPressed = scrKeyboardCheckPressed(global.up_key);
 
-if (bJumpKey && bCanJump)
+if (bJumpKeyPressed && bCanJump)
 {
 	nJumpDuration = 10;
 }
 
 // attack
-bAttackKey = scrKeyboardCheckPressed(ord("X"));
+bAttackKeyPressed = scrKeyboardCheckPressed(global.atk_key);
 
-if (bAttackKey && bCanAttack)
+if (bAttackKeyPressed && bCanAttack)
 {
 	nAttackDuration = 30;
 	instance_create_layer(x+16, y, "Instances", obj_attack);

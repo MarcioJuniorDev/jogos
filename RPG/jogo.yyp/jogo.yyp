@@ -49,6 +49,8 @@
     {"id":{"name":"scrHover","path":"scripts/scrHover/scrHover.yy",},},
     {"id":{"name":"scrKeyboardCheck","path":"scripts/scrKeyboardCheck/scrKeyboardCheck.yy",},},
     {"id":{"name":"scrKeyboardCheckPressed","path":"scripts/scrKeyboardCheckPressed/scrKeyboardCheckPressed.yy",},},
+    {"id":{"name":"scrKeyToString","path":"scripts/scrKeyToString/scrKeyToString.yy",},},
+    {"id":{"name":"scrLoadTextHover","path":"scripts/scrLoadTextHover/scrLoadTextHover.yy",},},
     {"id":{"name":"scrTextColorChange","path":"scripts/scrTextColorChange/scrTextColorChange.yy",},},
     {"id":{"name":"scrVerHitbox","path":"scripts/scrVerHitbox/scrVerHitbox.yy",},},
     {"id":{"name":"spr_attack","path":"sprites/spr_attack/spr_attack.yy",},},
