@@ -11,5 +11,10 @@
 	
 	case rm_config:
 		scrLoadTextHover(config_up_key);
+		scrLoadTextHover(config_right_key);
+		scrLoadTextHover(config_left_key);
+		scrLoadTextHover(config_down_key);
+		scrLoadTextHover(config_dash_key);
+		scrLoadTextHover(config_atk_key);
 	break;
 }
